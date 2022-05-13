@@ -20,6 +20,12 @@ function attachEventsListeners() {
         let curentValue = curentElement.value;
         let idCurent = curentElement.id;
 
+        let days = curentValue / obj[curentElement.id];
+        inputDayElement.value = days;
+        inputHoursElement.value = days * obj[inputHoursElement.id];
+        inputMinutesElement.value = days * obj[inputMinutesElement.id];
+        inputSecondsElement.value = days * obj[inputSecondsElement.id];
+        /*
         if (idCurent == 'days') {
             inputHoursElement.value = curentValue * obj.hours;
             inputMinutesElement.value = curentValue * obj.minutes;
@@ -40,6 +46,7 @@ function attachEventsListeners() {
             inputHoursElement.value = inputDayElement.value * obj.hours;
             inputMinutesElement.value = inputDayElement.value * obj.minutes;
         };
+        */
 
     };
 }
