@@ -12,7 +12,7 @@ function solve(area, vol, input) {
     JSON.parse(input).forEach(obj => {
         //let areaSum = area.call(obj, obj.x, obj.y);
         //let volSum = vol.call(obj, obj.x, obj.y, obj.z);
-        result.push({ area: area.call(obj, obj.x, obj.y), volume: vol.call(obj, obj.x, obj.y, obj.z) });
+        result.push({ area: area.call(obj), volume: vol.call(obj)});
     });
 
     return result;
