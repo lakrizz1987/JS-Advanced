@@ -1,46 +1,5 @@
 function solution() {
-
-    function restock(curentProduct, curentQty) {
-        storage[curentProduct] += curentQty;
-        let output = 'Success';
-        return output
-    }
-
-    function prepare(curentProduct, curentQty) {
-        let output = ''
-        let isNotEnought = false
-        let objNeed = new Map();
-        let falseProduct = [];
-        Object.entries(receipts[curentProduct]).forEach(arr => {
-            objNeed.set(arr[0], arr[1] * curentQty)
-
-        });
-
-        for (const key of objNeed) {
-
-            if (storage[key[0]] < key[1]) {
-                falseProduct.push(key[0]);
-                isNotEnought = true;
-                break;
-            }
-        }
-
-        if (isNotEnought) {
-            output = `Error: not enough ${falseProduct[0]} in stock`;
-        } else {
-            output = 'Success';
-            for (const key of objNeed) {
-                storage[key[0]] -= receipts[curentProduct][key[0]]*curentQty;
-            }
-        }
-
-        return output;
-    }
-
-    function report() {
-        return `protein=${storage.protein} carbohydrate=${storage.carbohydrate} fat=${storage.fat} flavour=${storage.flavour}`;
-    }
-
+    
     let storage = {
         protein: 0,
         carbohydrate: 0,
@@ -83,6 +42,53 @@ function solution() {
             return report();
         }
     }
+
+
+
+
+
+
+    function restock(curentProduct, curentQty) {
+        storage[curentProduct] += curentQty;
+        let output = 'Success';
+        return output
+    }
+
+    function prepare(curentProduct, curentQty) {
+        let output = ''
+        let isNotEnought = false
+        let objNeed = new Map();
+        let falseProduct = [];
+        Object.entries(receipts[curentProduct]).forEach(arr => {
+            objNeed.set(arr[0], arr[1] * curentQty)
+
+        });
+
+        for (const key of objNeed) {
+
+            if (storage[key[0]] < key[1]) {
+                falseProduct.push(key[0]);
+                isNotEnought = true;
+                break;
+            }
+        }
+
+        if (isNotEnought) {
+            output = `Error: not enough ${falseProduct[0]} in stock`;
+        } else {
+            output = 'Success';
+            for (const key of objNeed) {
+                storage[key[0]] -= receipts[curentProduct][key[0]] * curentQty;
+            }
+        }
+
+        return output;
+    }
+
+    function report() {
+        return `protein=${storage.protein} carbohydrate=${storage.carbohydrate} fat=${storage.fat} flavour=${storage.flavour}`;
+    }
+
 
     return commands;
 
