@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 200px;
+            border: 1px solid #f1f1f1;
+            perspective: 1000px;
+            /* Remove this if you don't want the 3D effect */
+        }
+
+        /* This container is needed to position the front and back side */
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        /* Do an horizontal flip when you move the mouse over the flip box container */
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Position the front and back side */
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            /* Safari */
+            backface-visibility: hidden;
+        }
+
+        /* Style the front side (fallback if image is missing) */
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        /* Style the back side */
+        .flip-card-back {
+            background-color: dodgerblue;
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script>
+        class NewProfile {
+
+            constructor(parentElement_ID, firstName, secondName, job) {
+                this.parentElement = parentElement_ID;
+                this.firstName = firstName;
+                this.secondName = secondName;
+                this.job = job;
+
+                this.construct()
+            }
+
+
+
+            construct() {
+                let mainElement = document.getElementById(this.parentElement);
+                let el = document.createElement('div');
+                el.innerHTML = `
+                    <div class="flip-card">
+                       <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                             <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+                          </div>
+                          <div class="flip-card-back">
+                             <h1>${this.firstName} ${this.secondName}</h1>
+                             <p>${this.job}</p>
+                             <p>We love that guy</p>
+                          </div>
+                     </div>
+                   </div>`
+
+                mainElement.appendChild(el);
+                return mainElement;
+            }
+        }
+
+        let workers = [{ root: 'root', firstName: 'Ivaylo', secondName: 'Ignatov', job: 'Developer' },
+        { root: 'root', firstName: 'Monika', secondName: 'Baneva', job: 'Lawer' }]
+
+        // let person = new NewProfile('root', 'Ivaylo', 'Ignatov', 'Developer');
+        //person.construct()
+        //let person2 = new NewProfile('root', 'Monika', 'Baneva', 'Lawer')
+        // person2.construct()
+
+        workers.forEach(person => {
+            let card = new NewProfile(person.root, person.firstName, person.secondName, person.job);
+        })
+
+        
+
+    </script>
+</body>
+
+</html>
