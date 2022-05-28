@@ -64,16 +64,16 @@ class Garden {
         output += `The garden has ${this.spaceAvailable} free space left.\n`
 
         let names = [];
-        this.plants.forEach(x=>names.push(x.plantName));
-        let sortedNames = names.sort((a,b)=>a.localeCompare(b))
+        this.plants.forEach(x => names.push(x.plantName));
+        let sortedNames = names.sort((a, b) => a.localeCompare(b))
         output += `Plants in the garden: ${sortedNames.join(', ')}\n`
 
-        if(this.storage.length == 0){
+        if (this.storage.length == 0) {
             output += "Plants in storage: The storage is empty."
-        }else{
-            let result = `Plants in storage: `
-            this.storage.forEach(x=>result += `${x.plantName} (${x.quantity})`);
-            output += result;
+        } else {
+            let arr = []
+            this.storage.forEach(x => arr.push(`${x.plantName} (${x.quantity})`));
+            output += `Plants in storage: ${arr.join(', ')}`;
         }
 
         return output;
