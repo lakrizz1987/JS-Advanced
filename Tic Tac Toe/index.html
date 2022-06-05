@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
+
 <body>
-   
+
     <header>
         <h1>Tic Tac Toe</h1>
     </header>
 
+        
     <article class="main-container" id="main">
         <section class="small-boxes" id="a1"></section>
         <section class="small-boxes" id="a2"></section>
@@ -26,7 +29,25 @@
         <section class="small-boxes" id="c3"></section>
     </article>
 
-    
-   
+    <button>Paly Game</button>
+
+    <audio id="audio" src="./mehul-sharma-bifrost-ocean-drive.wav"></audio>
+    <script>
+        let audio = document.getElementById('audio');
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', () => {
+            audio.play()
+            btn.textContent = 'Reset Game';
+            setTimeout(()=>{
+                document.querySelectorAll('section').forEach(x=>x.style.transform = 'scale(1.08)')
+            },1000) 
+
+            setTimeout(()=>{
+                document.querySelectorAll('section').forEach(x=>x.style.transform = 'scale(1)')
+            },1500) 
+
+        })
+    </script>
 </body>
+
 </html>
