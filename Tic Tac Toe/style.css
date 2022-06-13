@@ -3,6 +3,7 @@
 
 html {
     box-sizing: border-box;
+    
 }
 
 *,
@@ -38,6 +39,7 @@ h1 {
 }
 
 body {
+    height: 100vh;
     margin: 0;
     background: rgb(63, 94, 251);
     background: linear-gradient(90deg, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
@@ -56,7 +58,6 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-
     width: 500px;
     height: 500px;
 }
@@ -86,6 +87,15 @@ button {
     color: #5680E9;
     background-color: white;
     box-shadow: -4px -1px 7px -6px rgba(255, 255, 255, 0.897);
+}
+
+.score{
+    font-size: 40px;
+    color: white;
+    display: flex;
+    margin-top: 20px;
+    width: 200px;
+    justify-content: space-between;
 }
 
 

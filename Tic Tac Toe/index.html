@@ -37,18 +37,18 @@
         <section class="small-boxes" id="c3"></section>
     </article>
 
-    
+    <section class="score">
+        <span id="xScore">
+            X: 0
+        </span>
+        <span id="yScore">
+            Y: 0
+        </span>
+    </section>
 
-    <audio id="audio" src="./mehul-sharma-bifrost-ocean-drive.wav"></audio>
-    <script>
-        let audio = document.getElementById('audio');
-        let btn = document.querySelector('button')
-        btn.addEventListener('click', () => {
-            audio.play()
-            btn.textContent = 'Reset Game';
-           
-
-        })
+    <audio id="audio" src="./mehul-sharma-bifrost-ocean-drive.wav" muted></audio>
+    <script src="./app.js">
+       
     </script>
 </body>
 
