@@ -2,8 +2,9 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css);
 
 html {
-    box-sizing: border-box;
     
+    box-sizing: border-box;
+
 }
 
 *,
@@ -15,6 +16,8 @@ html {
 
 
 header {
+
+    position: relative;
     width: 100%;
     font-family: 'Raleway', sans-serif;
     font-weight: bolder;
@@ -25,20 +28,24 @@ header {
 }
 
 nav {
+
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
     background-color: #405DFA;
+
 }
 
 h1 {
+
     margin: 0;
     color: white;
-   
+
 }
 
 body {
+
     height: 100vh;
     margin: 0;
     background: rgb(63, 94, 251);
@@ -46,19 +53,23 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .container {
+
     display: flex;
     justify-content: space-around;
+
 }
 
-#chooseBox{
+#chooseBox {
+
     position: absolute;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 40px;
     color: rgb(255, 255, 255);
-    background-color:rgba(61, 61, 61, 0.5);
+    background-color: rgba(61, 61, 61, 0.5);
     display: none;
     font-weight: bold;
     margin-bottom: 10px;
@@ -70,21 +81,34 @@ body {
     border-radius: 5px;
     padding: 5px;
     z-index: 1;
+
 }
 
-.btnCh{
+.btnCh {
+
     display: inline-block;
     border: 2px solid white;
     border-radius: 10px;
     padding: 20px 20px;
+
 }
 
-.btnCh:hover{
+.btnCh:hover {
+
     cursor: pointer;
     transform: scale(1.85);
+
+}
+
+.wraper {
+
+    position: absolute;
+    top: 200px;
+
 }
 
 .main-container {
+
     z-index: 0;
     display: flex;
     flex-wrap: wrap;
@@ -93,14 +117,18 @@ body {
     width: 400px;
     height: 400px;
     margin-bottom: 50px;
+
 }
 
 .small-boxes:hover {
+
     transform: scale(1.05);
     cursor: pointer;
+
 }
 
 .small-boxes {
+
     display: flex;
     width: 115px;
     height: 115px;
@@ -111,7 +139,7 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 
@@ -129,13 +157,13 @@ button {
     box-shadow: -4px -1px 7px -6px rgba(255, 255, 255, 0.897);
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
     transform: scale(1.15);
 }
 
 
-.score{
+.score {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 40px;
     color: #9C52B4;
@@ -148,8 +176,14 @@ button:hover{
     border: 1px solid white;
     border-radius: 5px;
     padding: 5px;
+    animation: blinker 1.2s step-start infinite;
 }
 
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
 
 
 @media all and (max-width:520px) {
@@ -165,5 +199,9 @@ button:hover{
     .small-boxes {
         width: 90px;
         height: 90px;
+    }
+
+    .wraper {
+        top: 250px;
     }
 }

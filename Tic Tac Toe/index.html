@@ -11,23 +11,20 @@
 </head>
 
 <body>
-
     <header>
         <nav>
-            
             <h1>Tic Tac Toe</h1>
-            
             <sectoin class="buttons">
                 <button id="playGame">Play Game</button>
             </sectoin>
             
         </nav>
     </header>
+
     <section class="score" id="scoreBox">
         <span id="xScore">
             X WINS !!!
         </span>
-        
     </section>
     
     <article class="choose" id="chooseBox">
@@ -36,20 +33,21 @@
         <span class="btnCh" id="yChoose">O</span>
     </article>
 
-    <article class="main-container" id="main">
-        <section class="small-boxes" id="a1"></section>
-        <section class="small-boxes" id="a2"></section>
-        <section class="small-boxes" id="a3"></section>
-        <section class="small-boxes" id="b1"></section>
-        <section class="small-boxes" id="b2"></section>
-        <section class="small-boxes" id="b3"></section>
-        <section class="small-boxes" id="c1"></section>
-        <section class="small-boxes" id="c2"></section>
-        <section class="small-boxes" id="c3"></section>
-    </article>
-
+    <div class="wraper">
+        <article class="main-container" id="main">
+            <section class="small-boxes" id="a1"></section>
+            <section class="small-boxes" id="a2"></section>
+            <section class="small-boxes" id="a3"></section>
+            <section class="small-boxes" id="b1"></section>
+            <section class="small-boxes" id="b2"></section>
+            <section class="small-boxes" id="b3"></section>
+            <section class="small-boxes" id="c1"></section>
+            <section class="small-boxes" id="c2"></section>
+            <section class="small-boxes" id="c3"></section>
+        </article>
+    </div>
     
-
+    
     <audio id="audio" src="./mehul-sharma-bifrost-ocean-drive.wav"></audio>
     <script src="./app.js">
        
