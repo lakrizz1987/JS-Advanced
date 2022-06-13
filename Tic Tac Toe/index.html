@@ -16,18 +16,26 @@
         <nav>
             
             <h1>Tic Tac Toe</h1>
-            <section id="wins" hidden>
-                <h2>asdsad</h2>
-            </section>
+            
             <sectoin class="buttons">
-
-                <button>Play Game</button>
+                <button id="playGame">Play Game</button>
             </sectoin>
             
         </nav>
     </header>
-
+    <section class="score" id="scoreBox">
+        <span id="xScore">
+            X WINS !!!
+        </span>
         
+    </section>
+    
+    <article class="choose" id="chooseBox">
+        <span class="btnCh" id="xChoose">X</span>
+        <span id="chooseText">or</span>
+        <span class="btnCh" id="yChoose">O</span>
+    </article>
+
     <article class="main-container" id="main">
         <section class="small-boxes" id="a1"></section>
         <section class="small-boxes" id="a2"></section>
@@ -40,16 +48,9 @@
         <section class="small-boxes" id="c3"></section>
     </article>
 
-    <section class="score">
-        <span id="xScore">
-            X: 0
-        </span>
-        <span id="yScore">
-            O: 0
-        </span>
-    </section>
+    
 
-    <audio id="audio" src="./mehul-sharma-bifrost-ocean-drive.wav" muted></audio>
+    <audio id="audio" src="./mehul-sharma-bifrost-ocean-drive.wav"></audio>
     <script src="./app.js">
        
     </script>

@@ -53,13 +53,46 @@ body {
     justify-content: space-around;
 }
 
+#chooseBox{
+    position: absolute;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    background-color:rgba(61, 61, 61, 0.5);
+    display: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    z-index: 1;
+}
+
+.btnCh{
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+.btnCh:hover{
+    cursor: pointer;
+    transform: scale(1.85);
+}
+
 .main-container {
+    z-index: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 50px;
 }
 
 .small-boxes:hover {
@@ -69,8 +102,8 @@ body {
 
 .small-boxes {
     display: flex;
-    width: 135px;
-    height: 135px;
+    width: 115px;
+    height: 115px;
     border: 1px solid rgb(163, 163, 163);
     border-radius: 12px;
     color: white;
@@ -96,15 +129,25 @@ button {
     box-shadow: -4px -1px 7px -6px rgba(255, 255, 255, 0.897);
 }
 
+button:hover{
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+
 .score{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 40px;
-    color: white;
+    color: #9C52B4;
+    background-color: white;
     display: flex;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
     width: 200px;
     justify-content: space-between;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 
