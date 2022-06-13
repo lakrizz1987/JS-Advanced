@@ -10,8 +10,44 @@ let c3Element = document.getElementById('c3');
 
 let xScoreElement = document.getElementById('xScore');
 let yScoreElement = document.getElementById('yScore');
+let winBoxElement = document.getElementById('wins');
 
-let score = 0;
+let score = {
+    X: 0,
+    Y: 0
+}
+
+let mark = 'X';
+
+function win(e) {
+    if (e.target.textContent == '') {
+        e.target.textContent = mark;
+    }
+
+    if (a1Element.textContent == a2Element.textContent && a1Element.textContent == a3Element.textContent) {
+        score[mark]++
+
+        winBoxElement.textContent = `${mark} WINS !!!`;
+        winBoxElement.hidden = false;
+
+    }
+
+    if (mark == 'X') {
+        mark = 'O';
+    } else {
+        mark = 'X';
+    }
+
+
+}
+a1Element.addEventListener('click', win)
+a2Element.addEventListener('click', win)
+a3Element.addEventListener('click', win)
+b1Element.addEventListener('click', win)
+b2Element.addEventListener('click', win)
+b3Element.addEventListener('click', win)
+
+
 
 
 
@@ -26,6 +62,6 @@ let btn = document.querySelector('button')
 btn.addEventListener('click', () => {
     audio.play()
     btn.textContent = 'Reset Game';
-   
+
 
 })
