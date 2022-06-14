@@ -23,10 +23,23 @@ btnChoose.forEach(x => x.addEventListener('click', (e) => {
 let count = 0;
 let isDraw = false;
 let mark = '';
-
+let volumeOn = true;
 
 let audio = document.getElementById('audio');
-let btn = document.querySelector('button');
+let btn = document.querySelector('button.playBtn');
+let muteBtn = document.querySelector('button.muteBtn');
+
+muteBtn.addEventListener('click',(e)=>{
+    if(volumeOn){
+        audio.muted = true;
+        muteBtn.innerHTML = `<i class="fa-solid fa-volume-xmark"></i>`;
+        volumeOn = false;
+    }else{
+        audio.muted = false;
+        muteBtn.innerHTML = `<i class="fa-solid fa-volume-low"></i>`;
+        volumeOn = true;
+    }
+})
 
 btn.addEventListener('click', () => {
     if (!isOn) {

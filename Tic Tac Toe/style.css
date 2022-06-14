@@ -142,9 +142,15 @@ body {
 
 }
 
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
 
-button {
+button.playBtn {
     width: 150px;
     margin: 10px;
     font-size: 20px;
@@ -152,6 +158,20 @@ button {
     border-radius: 15px;
     cursor: pointer;
     border: none;
+    color: #5680E9;
+    background-color: white;
+    box-shadow: -4px -1px 7px -6px rgba(255, 255, 255, 0.897);
+}
+
+button.muteBtn{
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 17px;
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
     color: #5680E9;
     background-color: white;
     box-shadow: -4px -1px 7px -6px rgba(255, 255, 255, 0.897);
