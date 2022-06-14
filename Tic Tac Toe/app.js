@@ -41,6 +41,10 @@ muteBtn.addEventListener('click',(e)=>{
     }
 })
 
+let clickAudio = new Audio("rclick.mp3");
+let wraperEl = document.querySelector('div.wraper')
+
+
 btn.addEventListener('click', () => {
     if (!isOn) {
         audio.play()
@@ -58,6 +62,7 @@ btn.addEventListener('click', () => {
         c3Element.addEventListener('click', win);
         isOn = true;
 
+        wraperEl.addEventListener('click',clickSound);
     } else {
         btn.textContent = 'Play Game';
         document.querySelectorAll('.small-boxes').forEach(x => {
@@ -65,8 +70,13 @@ btn.addEventListener('click', () => {
             winBoxElement.style.display = 'none';
         })
         isOn = false;
+        wraperEl.removeEventListener('click',clickSound);
     }
 })
+
+function clickSound(){
+    clickAudio.play();
+}
 
 function checkWin(e) {
     if (isDraw) {
